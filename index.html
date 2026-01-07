@@ -1,21 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>NFT Store</title>
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <link rel="stylesheet" href="style.css">
+  <title>NFT Store Local Test</title>
 </head>
 <body>
-
   <h2>🛒 NFT Store</h2>
 
-  <div class="card">
-    <img src="https://i.postimg.cc/kGyc1L6D/photo-2026-01-05-15-00-06.jpg">
-    <h3>Ice Cream NFT</h3>
-    <p>Price: ₹299</p>
-    <button onclick="buy()">BUY</button>
+  <div>
+    <b>Ice Cream NFT</b><br>
+    Price: ₹299<br>
+    <input type="file" id="shot1"><br>
+    <button onclick="sendToBot(1)">Submit Screenshot</button>
   </div>
 
-  <script src="script.js"></script>
+  <div>
+    <b>Chocolate NFT</b><br>
+    Price: ₹499<br>
+    <input type="file" id="shot2"><br>
+    <button onclick="sendToBot(2)">Submit Screenshot</button>
+  </div>
+
+  <script>
+    function sendToBot(index){
+      let nftName, price, fileInput;
+      if(index===1){
+        nftName="Ice Cream NFT";
+        price=299;
+        fileInput = document.getElementById("shot1");
+      } else {
+        nftName="Chocolate NFT";
+        price=499;
+        fileInput = document.getElementById("shot2");
+      }
+
+      if(!fileInput.files[0]){
+        alert("❌ Please select a screenshot!");
+        return;
+      }
+
+      // Local testing simulation
+      alert(`✅ Screenshot ready for ${nftName} (local test)\nUse Telegram to send to bot with caption: ${nftName}|${price}`);
+    }
+  </script>
 </body>
 </html>
