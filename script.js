@@ -1,7 +1,7 @@
 const tg = window.Telegram.WebApp;
 tg.expand();
 
-/* ===== STORE PAGE ===== */
+/* ===== STORE ===== */
 function showStore() {
   document.body.innerHTML = `
     <h2>🛒 NFT Store</h2>
@@ -15,7 +15,7 @@ function showStore() {
   `;
 }
 
-/* ===== PAYMENT PAGE ===== */
+/* ===== PAYMENT ===== */
 function showPayment() {
   document.body.innerHTML = `
     <button onclick="showStore()" style="margin:10px;">⬅️ Back</button>
@@ -29,40 +29,28 @@ function showPayment() {
     <p style="text-align:center;"><b>UPI ID:</b> yourupi@bank</p>
     <p style="text-align:center;"><b>Amount:</b> ₹299</p>
 
-    <div style="text-align:center; margin-top:20px;">
-      <input 
-        id="utr"
-        placeholder="Enter UTR Number"
-        style="padding:10px; width:80%; font-size:16px;"
-      >
+    <hr>
+
+    <h3 style="text-align:center;">📸 Upload Payment Screenshot</h3>
+
+    <div style="text-align:center;">
+      <input type="file" accept="image/*">
     </div>
 
-    <div style="text-align:center; margin-top:15px;">
-      <button onclick="submitUTR()" style="padding:10px 20px;">
-        Submit UTR
-      </button>
+    <p style="text-align:center; margin-top:15px;">
+      Screenshot upload karne ke baad<br>
+      <b>Is screenshot ko admin ko Telegram me bhejo</b>
+    </p>
+
+    <div style="text-align:center; margin-top:10px;">
+      <button onclick="openAdminChat()">Send Screenshot to Admin</button>
     </div>
   `;
 }
 
-/* ===== UTR SUBMIT ===== */
-function submitUTR() {
-  const utr = document.getElementById("utr").value;
-
-  if (!utr) {
-    alert("Please enter UTR number");
-    return;
-  }
-
-  // Send UTR to Telegram bot chat
-  tg.sendData(JSON.stringify({
-    nft: "Ice Cream NFT",
-    amount: 299,
-    utr: utr
-  }));
-
-  alert("UTR sent to admin. NFT will be delivered after verification ✅");
-  showStore();
+/* ===== OPEN ADMIN CHAT ===== */
+function openAdminChat() {
+  tg.openTelegramLink("https://t.me/YOUR_ADMIN_USERNAME");
 }
 
 /* First load */
