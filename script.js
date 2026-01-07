@@ -7,14 +7,14 @@ function buy() {
 
     <!-- Apni QR Image ka link yaha paste karo -->
     <div style="text-align:center; margin:20px;">
-      <img src="https://i.postimg.cc/pdsrVZwg/photo-2026-01-07-12-51-40.jpg" width="200" alt="UPI QR">
+      <img src="https://i.postimg.cc/x8dnxJt4/photo-2026-01-07-13-28-16.jpg" width="200" alt="UPI QR">
     </div>
 
     <p style="text-align:center;"><b>UPI ID:</b> Vipul9784@axl</p>
-    <p style="text-align:center;"><b>Amount:</b> ₹299</p>
+    <p style="text-align:center;"><b>Amount:</b> ₹2999</p>
 
     <p style="text-align:center; color:#FFD700;">
-      Payment ke baad <b>UTR number</b> admin ko bhejo
+      Payment ke baad <b>UTR number</b> admin ko bhejo- @Angelic_Man
     </p>
 
     <div style="text-align:center; margin-top:20px;">
