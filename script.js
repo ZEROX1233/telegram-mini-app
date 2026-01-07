@@ -50,8 +50,9 @@ function showPayment() {
 
 /* ===== OPEN ADMIN CHAT ===== */
 function openAdminChat() {
-  tg.openTelegramLink("https://t.me/YOUR_ADMIN_USERNAME");
+  tg.openTelegramLink("https://t.me/Angelic_man");
 }
 
 /* First load */
 showStore();
+
